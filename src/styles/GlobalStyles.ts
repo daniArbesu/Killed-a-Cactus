@@ -10,11 +10,34 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background-color: ${theme.color.background};
+    font-family: 'Founders Grotesk', sans-serif;
 }
 
 ul,li{
   list-style: none;
 }
+
+@font-face {
+    font-family: 'Founders Grotesk';
+    src: url("/founders-grotesk.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+  }
+@font-face {
+    font-family: 'Oggtext';
+    src: url("/OggText.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+  }
+@font-face {
+    font-family: 'Oggtext';
+    src: url("/OggText-Italic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: auto;
+  }
 
 `;
 
