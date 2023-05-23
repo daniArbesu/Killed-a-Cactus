@@ -1,6 +1,11 @@
 export const theme = {
   color: {
     background: '#b8caaa',
-    heroBackground: '#cdd4c2',
+  },
+  breakpoints: {
+    phone: '479px',
+    tablet: '768px',
+    desktop: '1366px',
+    LgDesktop: '1920px',
   },
 };
