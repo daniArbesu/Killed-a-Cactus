@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import Home from './pages/Home';
 import '../node_modules/locomotive-scroll/dist/locomotive-scroll.css';
+import GlobalStyle from './styles/GlobalStyles';
 
 function App() {
   const containerRef = useRef(null);
@@ -21,6 +22,7 @@ function App() {
       }
       containerRef={containerRef}
     >
+      <GlobalStyle />
       <main data-scroll-container ref={containerRef}>
         <Home />
       </main>
