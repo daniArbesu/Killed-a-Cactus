@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const IntroSection = styled.section`
   width: 100%;
-  height: 500vh;
+  height: 400vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +104,7 @@ const introAnimation = () => {
       trigger: '.intro-animation',
       start: 'center center',
       end: 'bottom 100px',
-      toggleActions: 'play none reverse reset ',
+      scrub: true,
     },
     opacity: 0,
   });
@@ -114,10 +114,10 @@ const introAnimation = () => {
       trigger: '.intro-text',
       start: 'center center',
       end: 'bottom 100px',
-      toggleActions: 'play none reverse reset ',
+      scrub: true,
     },
     css: {
-      left: '35vw',
+      left: '30vw',
       scale: 1.5,
     },
     duration: 2,
@@ -128,7 +128,7 @@ const introAnimation = () => {
       trigger: '.intro-text',
       start: 'center center',
       end: 'bottom 100px',
-      toggleActions: 'play none reverse reset ',
+      scrub: true,
     },
     css: {
       opacity: 1,

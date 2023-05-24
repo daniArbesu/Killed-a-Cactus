@@ -6,6 +6,8 @@ import plant3 from '../assets/images/hero-plants-3.png';
 import plant4 from '../assets/images/hero-plants-4.png';
 
 const HeroSection = styled.section`
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100svh;
   background-color: #acbe9e;
