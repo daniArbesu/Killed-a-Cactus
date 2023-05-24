@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 import { theme } from '../styles/theme';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import IntroPlantAnimation from '../components/IntroPlantAnimation.jsx';
 
 const IntroSection = styled.section`
