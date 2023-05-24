@@ -107,7 +107,7 @@ const HeroTextWrapper = styled.div`
 
 const Hero = () => {
   return (
-    <HeroSection data-scroll-section>
+    <HeroSection>
       <FirstImage src={plant1} />
       <SecondImage src={plant2} />
       <ThirdImage src={plant3} />

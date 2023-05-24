@@ -1,14 +1,15 @@
 export const theme = {
   color: {
     background: '#b8caaa',
+    span: '#708f70',
   },
   fontSize: {
     sm: '1.2vw',
     md: '',
     lg: '',
     xl: '',
-    xxl: '',
-    xxxl: '',
+    xxl: '5vw',
+    xxxl: '14vw',
     xxxxl: '23vw',
   },
   fontWeight: {
