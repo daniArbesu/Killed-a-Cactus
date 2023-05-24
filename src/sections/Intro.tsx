@@ -88,8 +88,8 @@ const introAnimation = () => {
     scrollTrigger: {
       trigger: '.intro-animation',
       start: 'center center',
-      end: 'top top',
-      toggleActions: 'restart none none none',
+      end: 'bottom 100px',
+      toggleActions: 'play none reverse reset ',
     },
     opacity: 0,
     duration: 1,
@@ -138,7 +138,7 @@ const Intro = () => {
           This is <br />a <span>plant</span>
         </h2>
       </AnimationTextWrapper>
-      <IntroPlantAnimation className="intro-animation" />
+      <IntroPlantAnimation />
       <IntroTextWrapper className="intro-text">
         <h3>
           Consider these <br />

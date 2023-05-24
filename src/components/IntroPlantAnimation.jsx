@@ -41,6 +41,7 @@ const IntroPlantAnimation = () => {
         interactivity={interactivity}
         animationData={introAnimation}
         autoplay={false}
+        className="intro-animation"
       />
     </IntroLottieWrapper>
   );
