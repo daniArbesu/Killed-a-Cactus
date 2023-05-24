@@ -34,10 +34,14 @@ const IntroLottieWrapper = styled.div`
   }
 `;
 
+const LottieAnimation = styled(Lottie)`
+  position: relative;
+`;
+
 const IntroPlantAnimation = () => {
   return (
     <IntroLottieWrapper>
-      <Lottie
+      <LottieAnimation
         interactivity={interactivity}
         animationData={introAnimation}
         autoplay={false}

@@ -47,7 +47,6 @@ const AnimationTextWrapper = styled.div`
 `;
 
 const IntroTextWrapper = styled.div`
-  background: red;
   position: sticky;
   display: flex;
   flex-direction: column;
@@ -57,14 +56,27 @@ const IntroTextWrapper = styled.div`
   top: 40vh;
   z-index: 20;
 
+  @media (max-width: ${theme.breakpoints.phone}) {
+    padding-left: 3rem;
+    max-width: 70vw;
+  }
+
   h3 {
+    position: relative;
     font-family: 'Oggtext', sans-serif;
-    font-size: ${theme.fontSize.xxl};
+    font-size: ${theme.fontSize.xl};
     color: white;
     line-height: 5vw;
-    letter-spacing: -6px;
+    letter-spacing: 0;
     font-weight: ${theme.fontWeight.light};
     opacity: 0;
+
+    @media (max-width: ${theme.breakpoints.phone}) {
+      font-size: ${theme.fontSize.xxl};
+      overflow-wrap: break-word;
+      line-height: 9.5vw;
+      margin-top: 25vh;
+    }
 
     span {
       font-style: italic;
@@ -76,6 +88,9 @@ const IntroTextWrapper = styled.div`
       vertical-align: sub;
       font-weight: ${theme.fontWeight.bold};
       letter-spacing: 0px;
+      @media (max-width: ${theme.breakpoints.phone}) {
+        font-size: 1rem;
+      }
     }
   }
 `;
@@ -92,6 +107,33 @@ const introAnimation = () => {
       toggleActions: 'play none reverse reset ',
     },
     opacity: 0,
+  });
+
+  gsap.to('.intro-animation', {
+    scrollTrigger: {
+      trigger: '.intro-text',
+      start: 'center center',
+      end: 'bottom 100px',
+      toggleActions: 'play none reverse reset ',
+    },
+    css: {
+      left: '35vw',
+      scale: 1.5,
+    },
+    duration: 2,
+  });
+
+  gsap.to('.intro-text', {
+    scrollTrigger: {
+      trigger: '.intro-text',
+      start: 'center center',
+      end: 'bottom 100px',
+      toggleActions: 'play none reverse reset ',
+    },
+    css: {
+      opacity: 1,
+      left: '-15vw',
+    },
   });
 
   /*   // GSAP timeline
@@ -138,8 +180,8 @@ const Intro = () => {
         </h2>
       </AnimationTextWrapper>
       <IntroPlantAnimation />
-      <IntroTextWrapper className="intro-text">
-        <h3>
+      <IntroTextWrapper>
+        <h3 className="intro-text">
           Consider these <br />
           variables to help <br />
           this plant <span>survive</span>{' '}
