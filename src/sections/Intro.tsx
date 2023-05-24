@@ -80,35 +80,46 @@ const IntroTextWrapper = styled.div`
   }
 `;
 
-gsap.registerPlugin(ScrollTrigger);
-
-// GSAP timeline
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.intro-animation',
-    pin: true,
-    start: 'top top',
-    endTrigger: '.intro-animation',
-    end: 'center center',
-    scrub: true,
-  },
-});
-
-gsap.defaults({
-  duration: 1,
-  ease: 'none',
-});
-
 const introAnimation = () => {
-  tl.to('#intro-plant-text', {
-    opacity: 1,
-  }).to(
-    '#intro-plant-text',
-    {
-      opacity: 0,
+  // register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.intro-plant-text', {
+    scrollTrigger: {
+      trigger: '.intro-animation',
+      start: 'center center',
+      end: 'top top',
+      toggleActions: 'restart none none none',
     },
-    '<'
-  );
+    opacity: 0,
+    duration: 1,
+  });
+
+  /*   // GSAP timeline
+  const tl = gsap
+    .timeline()
+    .from('.intro-plant-text', {
+      opacity: 1,
+    })
+    .to('.intro-plant-text', {
+      delay: 1,
+      opacity: 0,
+      duration: 1,
+    })
+    .to('.intro-animation', {
+      x: 100,
+      scale: 2,
+      duration: 1,
+    });
+
+  ScrollTrigger.create({
+    animation: tl,
+    trigger: '.container',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: true,
+    markers: true,
+  }); */
 };
 
 const Intro = () => {
@@ -121,9 +132,9 @@ const Intro = () => {
   });
 
   return (
-    <IntroSection>
-      <AnimationTextWrapper className="intro-plant-text" id="intro-plant-text">
-        <h2>
+    <IntroSection className="container">
+      <AnimationTextWrapper>
+        <h2 className="intro-plant-text">
           This is <br />a <span>plant</span>
         </h2>
       </AnimationTextWrapper>

@@ -7,19 +7,14 @@ const interactivity = {
   mode: 'scroll',
   actions: [
     {
-      visibility: [0, 0.2],
+      visibility: [0, 0.7],
       type: 'seek',
-      frames: [0],
-    },
-    {
-      visibility: [0.2, 0.7],
-      type: 'seek',
-      frames: [0, 30],
+      frames: [0, 60],
     },
     {
       visibility: [0.7, 1.0],
       type: 'seek',
-      frames: [30, 90],
+      frames: [60, 90],
     },
   ],
 };
