@@ -32,6 +32,11 @@ const AnimationTextWrapper = styled.div`
     letter-spacing: -6px;
     font-weight: ${theme.fontWeight.light};
 
+    @media (max-width: ${theme.breakpoints.phone}) {
+      font-size: ${theme.fontSize.xxxxl};
+      line-height: 22vw;
+    }
+
     span {
       font-style: italic;
     }
@@ -47,7 +52,6 @@ const IntroTextWrapper = styled.div`
   align-items: center;
   margin-top: 40vh;
   top: 40vh;
-  bottom: 40vh;
   z-index: 20;
 
   h3 {
@@ -75,7 +79,7 @@ const IntroTextWrapper = styled.div`
 
 const Intro = () => {
   return (
-    <IntroSection data-scroll-section>
+    <IntroSection>
       <AnimationTextWrapper>
         <h2>
           This is <br />a <span>plant</span>

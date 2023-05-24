@@ -1,5 +1,6 @@
 import Lottie from 'lottie-react';
 import introAnimation from '../assets/lotties/intro-spin.json';
+import { theme } from '../styles/theme';
 import { styled } from 'styled-components';
 
 const interactivity = {
@@ -23,10 +24,6 @@ const interactivity = {
   ],
 };
 
-const style = {
-  width: '40vw',
-};
-
 const IntroLottieWrapper = styled.div`
   position: sticky;
   top: 0;
@@ -36,6 +33,10 @@ const IntroLottieWrapper = styled.div`
   height: 100vh;
   width: 40vw;
   z-index: 20;
+
+  @media (max-width: ${theme.breakpoints.phone}) {
+    width: 100%;
+  }
 `;
 
 const IntroPlantAnimation = () => {
@@ -45,7 +46,6 @@ const IntroPlantAnimation = () => {
         interactivity={interactivity}
         animationData={introAnimation}
         autoplay={false}
-        style={style}
       />
     </IntroLottieWrapper>
   );

@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
     background-color: ${theme.color.background};
     font-family: 'Founders Grotesk', sans-serif;
