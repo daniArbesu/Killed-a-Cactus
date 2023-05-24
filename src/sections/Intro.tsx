@@ -92,7 +92,6 @@ const introAnimation = () => {
       toggleActions: 'play none reverse reset ',
     },
     opacity: 0,
-    duration: 1,
   });
 
   /*   // GSAP timeline
