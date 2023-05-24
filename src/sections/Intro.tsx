@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const IntroSection = styled.section`
   width: 100%;
-  height: 400vh;
+  height: 500vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,8 +52,9 @@ const IntroTextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40vh;
-  top: 40vh;
+  margin-top: 5vh;
+  height: 100vh;
+  top: 0;
   z-index: 20;
 
   @media (max-width: ${theme.breakpoints.phone}) {
@@ -75,7 +76,6 @@ const IntroTextWrapper = styled.div`
       font-size: ${theme.fontSize.xxl};
       overflow-wrap: break-word;
       line-height: 9.5vw;
-      margin-top: 25vh;
     }
 
     span {
@@ -103,7 +103,7 @@ const introAnimation = () => {
     scrollTrigger: {
       trigger: '.intro-animation',
       start: 'center center',
-      end: 'bottom 100px',
+      end: 'center 200px',
       scrub: true,
     },
     opacity: 0,
@@ -111,14 +111,15 @@ const introAnimation = () => {
 
   gsap.to('.intro-animation', {
     scrollTrigger: {
-      trigger: '.intro-text',
-      start: 'center center',
+      trigger: '.intro-animation',
+      start: 'center 60%',
       end: 'bottom 100px',
       scrub: true,
     },
     css: {
-      left: '30vw',
-      scale: 1.5,
+      /* transform: 'translate3d(26vw, 0px, 0px) scale3d(1.4, 1.4, 1)', */
+      left: '26vw',
+      scale: '1.4',
     },
     duration: 2,
   });
