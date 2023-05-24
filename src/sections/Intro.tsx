@@ -1,8 +1,11 @@
 import { styled } from 'styled-components';
 import { theme } from '../styles/theme';
+import { gsap } from 'gsap';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import IntroPlantAnimation from '../components/IntroPlantAnimation.jsx';
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const IntroSection = styled.section`
   width: 100%;
@@ -77,16 +80,56 @@ const IntroTextWrapper = styled.div`
   }
 `;
 
+gsap.registerPlugin(ScrollTrigger);
+
+// GSAP timeline
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.intro-animation',
+    pin: true,
+    start: 'top top',
+    endTrigger: '.intro-animation',
+    end: 'center center',
+    scrub: true,
+    markers: true,
+  },
+});
+
+gsap.defaults({
+  duration: 1,
+  ease: 'none',
+});
+
+const introAnimation = () => {
+  tl.to('#intro-plant-text', {
+    opacity: 1,
+  }).to(
+    '#intro-plant-text',
+    {
+      opacity: 0,
+    },
+    '<'
+  );
+};
+
 const Intro = () => {
+  useEffect(() => {
+    // solution to avoid double render in React Strictmode
+    const ctx = gsap.context(() => {
+      introAnimation();
+    });
+    return () => ctx.revert(); // <- cleanup!
+  });
+
   return (
     <IntroSection>
-      <AnimationTextWrapper>
+      <AnimationTextWrapper className="intro-plant-text" id="intro-plant-text">
         <h2>
           This is <br />a <span>plant</span>
         </h2>
       </AnimationTextWrapper>
-      <IntroPlantAnimation />
-      <IntroTextWrapper>
+      <IntroPlantAnimation className="intro-animation" />
+      <IntroTextWrapper className="intro-text">
         <h3>
           Consider these <br />
           variables to help <br />
