@@ -91,7 +91,6 @@ const tl = gsap.timeline({
     endTrigger: '.intro-animation',
     end: 'center center',
     scrub: true,
-    markers: true,
   },
 });
 
