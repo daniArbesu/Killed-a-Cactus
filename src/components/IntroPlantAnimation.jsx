@@ -25,9 +25,9 @@ const IntroLottieWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100svh;
   width: 40vw;
-  z-index: 20;
+  z-index: 30;
 
   @media (max-width: ${theme.breakpoints.phone}) {
     width: 100%;
@@ -36,6 +36,7 @@ const IntroLottieWrapper = styled.div`
 
 const LottieAnimation = styled(Lottie)`
   position: relative;
+  filter: saturate(130%);
 `;
 
 const IntroPlantAnimation = () => {

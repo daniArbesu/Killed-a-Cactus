@@ -15,6 +15,8 @@ html{
 body{
     background-color: ${theme.color.background};
     font-family: 'Founders Grotesk', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 ul,li{
@@ -42,6 +44,15 @@ ul,li{
     font-style: italic;
     font-display: auto;
   }
+
+  svg:not(:root) {
+    overflow: hidden;
+}
+
+  ::selection {
+    color: ${theme.color.selection};
+    background: ${theme.color.selectionBackground}
+}
 
 `;
 

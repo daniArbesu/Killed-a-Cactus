@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const IntroSection = styled.section`
   width: 100%;
-  height: 500vh;
+  height: 500svh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ const AnimationTextWrapper = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,11 +49,10 @@ const AnimationTextWrapper = styled.div`
 const IntroTextWrapper = styled.div`
   position: sticky;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 5vh;
-  height: 100vh;
+  height: 100svh;
   top: 0;
   z-index: 20;
 
@@ -74,7 +73,6 @@ const IntroTextWrapper = styled.div`
 
     @media (max-width: ${theme.breakpoints.phone}) {
       font-size: ${theme.fontSize.xxl};
-      overflow-wrap: break-word;
       line-height: 9.5vw;
     }
 
@@ -117,11 +115,9 @@ const introAnimation = () => {
       scrub: true,
     },
     css: {
-      /* transform: 'translate3d(26vw, 0px, 0px) scale3d(1.4, 1.4, 1)', */
-      left: '26vw',
-      scale: '1.4',
+      transform: 'translateX(40vw) scale(1.4)',
     },
-    duration: 2,
+    duration: 1,
   });
 
   gsap.to('.intro-text', {
@@ -133,7 +129,7 @@ const introAnimation = () => {
     },
     css: {
       opacity: 1,
-      left: '-15vw',
+      transform: 'translateX(-23vw)',
     },
   });
 

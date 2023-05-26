@@ -2,6 +2,8 @@ export const theme = {
   color: {
     background: '#b8caaa',
     span: '#708f70',
+    selection: '#Bdff00',
+    selectionBackground: '#394437',
   },
   fontSize: {
     sm: '1.2vw',
